@@ -5,6 +5,12 @@ const config = {
     short:
       "Explore the portfolio of Marco Christian, a software engineer, full-stack developer, and AI enthusiast!",
   },
+  aboutPhoto: "/assets/about/me.jpg",
+  about: [
+  "Hi, I'm Marco Christian, a software engineer and full-stack developer who enjoys building interactive, polished web experiences.",
+  "I work mostly with React and NestJS, and I'm increasingly interested in AI-powered products.",
+  "Outside of code, replace this with something personal.",
+  ],
   keywords: [
     "Marco",
     "portfolio",
