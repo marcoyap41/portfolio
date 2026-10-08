@@ -29,7 +29,7 @@ const AboutSection = () => {
       <SectionHeader
         id="about"
         title="About Me"
-        desc="A bit about who I am"
+        desc="The thoughts, curiosities, and stories behind the work"
         className="static mb-14"
       />
 

@@ -7,9 +7,9 @@ const config = {
   },
   aboutPhoto: "/assets/about/me.jpg",
   about: [
-  "Hi, I'm Marco Christian, a software engineer and full-stack developer who enjoys building interactive, polished web experiences.",
-  "I work mostly with React and NestJS, and I'm increasingly interested in AI-powered products.",
-  "Outside of code, replace this with something personal.",
+  "Hi, I'm Marco Christian, a Computer Science student at UGM and a software engineer who enjoys building interactive, polished web experiences.",
+  "I like turning ideas into practical solutions, and I'm increasingly interested in building products at the intersection of Software Engineering and AI.",
+  "Outside of code, I enjoy learning, reflecting, and exploring what makes life meaningful.",
   ],
   keywords: [
     "Marco",

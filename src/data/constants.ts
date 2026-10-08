@@ -73,8 +73,8 @@ export const SKILLS: Record<SkillNames, Skill> = {
     name: "nestjs",
     label: "NestJS",
     shortDescription: `Backend Web Development\nNode.js Framework`,
-    color: "#61dafb",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    color: "#e0234e",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg",
   },
   [SkillNames.PRISMA]: {
     id: 6,
@@ -82,8 +82,8 @@ export const SKILLS: Record<SkillNames, Skill> = {
     label: "Prisma",
     shortDescription:
       "Backend Web Development\nNode.js/TypeScript ORM",
-    color: "#41b883",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
+    color: "#5a67d8",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg",
   },
   [SkillNames.NEXTJS]: {
     id: 7,
@@ -259,7 +259,7 @@ export const EXPERIENCE: Experience[] = [
     id: 1,
     startDate: "Sep 2026",
     endDate: "Present",
-    title: "Software Engineer Intern",
+    title: "🔹 Software Engineer Intern",
     company: "Dinas Komunikasi dan Informatika",
     description: [
       "Developed a dynamic tourism platform based on client requirements from Dinas Pariwisata Kulon Progo to promote local tourist destinations.",
@@ -270,10 +270,9 @@ export const EXPERIENCE: Experience[] = [
     skills: [
       SkillNames.TS,
       SkillNames.NESTJS,
-      SkillNames.NODEJS,
-      SkillNames.PRISMA,
       SkillNames.POSTGRES,
       SkillNames.MONGODB,
+      SkillNames.PRISMA,
       SkillNames.DOCKER,
     ],
   },

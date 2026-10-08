@@ -81,7 +81,12 @@ const brand = (title: string, file: string): Skill => ({
   icon: <MaskIcon src={`/assets/logos/${file}`} title={title} />,
 });
 const PROJECT_SKILLS = {
-  html: brand("html", "html-mono.svg"),
+  html: brand("HTML", "html5-mono.svg"),
+  css: brand("CSS", "css3-mono.svg"),
+  nestjs: brand("NestJS", "nestjs-mono.svg"),
+  typeorm: brand("TypeORM", "typeorm-mono.svg"),
+  jwt: brand("JWT", "jwt.svg"),
+  vercel: brand("Vercel", "vercel-mono.svg"),
   next: brand("Next.js", "nextdotjs-mono.svg"),
   chakra: brand("Chakra UI", "chakra-ui-mono.svg"),
   node: brand("Node.js", "nodedotjs-mono.svg"),
@@ -207,25 +212,21 @@ const projects: Project[] = [
     screenshots: ["landing.png"],
     skills: {
       frontend: [
+        PROJECT_SKILLS.html,
+        PROJECT_SKILLS.css,
         PROJECT_SKILLS.js,
-        PROJECT_SKILLS.ts,
-        PROJECT_SKILLS.react,
-        PROJECT_SKILLS.reactNative,
-        PROJECT_SKILLS.tailwind,
       ],
       backend: [
-        PROJECT_SKILLS.hono,
-        PROJECT_SKILLS.trpc,
-        PROJECT_SKILLS.drizzle,
+        PROJECT_SKILLS.nestjs,
         PROJECT_SKILLS.postgres,
-        PROJECT_SKILLS.redis,
-        PROJECT_SKILLS.betterAuth,
-        PROJECT_SKILLS.cloudflare,
+        PROJECT_SKILLS.typeorm,
+        PROJECT_SKILLS.jwt,
+        PROJECT_SKILLS.vercel,
         PROJECT_SKILLS.docker,
       ],
     },
     live: "https://kanvu.vercel.app/",
-    // Private repo (commercial product) — intentionally no public source link
+    github: "https://github.com/marcoyap41/kanvu",
     get content() {
       return (
         <div>
