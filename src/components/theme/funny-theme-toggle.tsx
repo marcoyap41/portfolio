@@ -65,14 +65,14 @@ export default function FunnyThemeToggle({
   };
 
   const goDark = (e: React.MouseEvent) => {
-    const description =
-      themeDisclaimers.dark[counter.dark % themeDisclaimers.dark.length];
-    setCounter({ ...counter, dark: counter.dark + 1 });
-    toast({
-      description: description,
-      className:
-        "top-0 right-0 flex fixed md:max-w-[420px] md:top-16 md:right-4",
-    });
+    // const description =
+    //   themeDisclaimers.dark[counter.dark % themeDisclaimers.dark.length];
+    // setCounter({ ...counter, dark: counter.dark + 1 });
+    // toast({
+    //   description: description,
+    //   className:
+    //     "top-0 right-0 flex fixed md:max-w-[420px] md:top-16 md:right-4",
+    // });
     toggleTheme("dark", e);
   };
 

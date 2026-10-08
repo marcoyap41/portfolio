@@ -24,7 +24,7 @@ export const useSounds = () => {
         const releaseDecodedBuffer = await ctx.decodeAudioData(releaseArrayBuffer);
         releaseBufferRef.current = releaseDecodedBuffer;
 
-        const confettiResponse = await fetch('/assets/sounds/vine-boom.mp3');
+        const confettiResponse = await fetch('/assets/keycap-sounds/release.mp3');
         const confettiArrayBuffer = await confettiResponse.arrayBuffer();
         confettiBufferRef.current = await ctx.decodeAudioData(confettiArrayBuffer);
       } catch (error) {

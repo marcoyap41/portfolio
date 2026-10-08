@@ -16,6 +16,37 @@ import { setSceneStatus, useSceneStatus } from "@/lib/scene-health";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const findSkillObjects = (
+  app: Application,
+  skillName: string
+) => {
+  const root = app.findObjectByName(skillName);
+
+  if (!root) {
+    return null;
+  }
+
+  const objects = app.getAllObjects();
+
+  const keycap = objects.find(
+    (obj: SPEObject) =>
+      obj.name === "keycap" &&
+      (obj as any).parentUuid === root.uuid
+  );
+
+  const legend = objects.find(
+    (obj: SPEObject) =>
+      obj.name === "legend" &&
+      (obj as any).parentUuid === keycap?.uuid
+  );
+
+  return {
+    root,
+    keycap,
+    legend,
+  };
+};
+
 const KeyboardScene = ({ maxDpr }: { maxDpr: number }) => {
   const { isLoading, bypassLoading } = usePreloader();
   const { theme } = useTheme();
@@ -210,11 +241,13 @@ const KeyboardScene = ({ maxDpr }: { maxDpr: number }) => {
     const start = () => {
       killSettle();
       killFloat();
+
       Object.values(SKILLS)
         .sort(() => Math.random() - 0.5)
         .forEach((skill, idx) => {
           const keycap = splineApp.findObjectByName(skill.name);
           if (!keycap) return;
+
           floatTweens.push(
             gsap.to(keycap.position, {
               y: Math.random() * 200 + 200,
@@ -504,7 +537,35 @@ const KeyboardScene = ({ maxDpr }: { maxDpr: number }) => {
         className="w-full h-full fixed"
         ref={splineContainer}
         onLoad={(app: Application) => {
-          if (!sceneAlive.current) return;
+        
+
+          const nestObjects = findSkillObjects(app, "nestjs");
+    const prismaObjects = findSkillObjects(app, "prisma");
+
+          if (nestObjects) {
+  nestObjects.root.visible = true;
+
+  if (nestObjects.keycap) {
+    nestObjects.keycap.visible = true;
+  }
+
+  if (nestObjects.legend) {
+    nestObjects.legend.visible = true;
+  }
+}
+
+if (prismaObjects) {
+  prismaObjects.root.visible = true;
+
+  if (prismaObjects.keycap) {
+    prismaObjects.keycap.visible = true;
+  }
+
+  if (prismaObjects.legend) {
+    prismaObjects.legend.visible = true;
+  }
+}
+
           setSceneStatus("ready");
           setSplineApp(app);
           bypassLoading();

@@ -1,12 +1,12 @@
 const config = {
-  title: "Naresh Khatri | Full-Stack Developer",
+  title: "Marco Christian | Portfolio",
   description: {
-    long: "Explore the portfolio of Naresh, a full-stack developer and creative technologist specializing in interactive web experiences, 3D animations, and innovative projects. Discover my latest work, including Coding Ducks, The Booking Desk, Ghostchat, and more. Let's build something amazing together!",
+    long: "Explore the portfolio of Marco Christian, a software engineer, full-stack developer, and AI enthusiast!",
     short:
-      "Discover the portfolio of Naresh, a full-stack developer creating interactive web experiences and innovative projects.",
+      "Explore the portfolio of Marco Christian, a software engineer, full-stack developer, and AI enthusiast!",
   },
   keywords: [
-    "Naresh",
+    "Marco",
     "portfolio",
     "full-stack developer",
     "creative technologist",
@@ -23,23 +23,23 @@ const config = {
     "Spline",
     "Framer Motion",
   ],
-  author: "Naresh Khatri",
-  email: "naresh.khatri2345@gmail.com",
-  site: "https://nareshkhatri.dev",
+  author: "Marco Christian",
+  email: "marcochristian114@gmail.com",
+  site: "https://marcoyap.my.id",
 
   // for github stars button
-  githubUsername: "naresh-khatri",
-  githubRepo: "3d-portfolio",
+  githubUsername: "marcoyap41",
+  githubRepo: "portfolio",
 
   get ogImg() {
     return this.site + "/assets/seo/og-image.png";
   },
   social: {
-    twitter: "https://x.com/nothotchaddi",
-    linkedin: "https://www.linkedin.com/in/naresh-khatri/",
-    instagram: "https://www.instagram.com/hotchaddi",
-    facebook: "https://www.facebook.com/HotChaddi/",
-    github: "https://github.com/Naresh-Khatri",
+    twitter: "#",
+    linkedin: "https://www.linkedin.com/in/marcochristian41",
+    instagram: "https://www.instagram.com/_marcoyap",
+    facebook: "#",
+    github: "https://github.com/marcoyap41",
   },
 };
 export { config };

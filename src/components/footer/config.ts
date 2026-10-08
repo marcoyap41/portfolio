@@ -1,11 +1,11 @@
 const footer: { title: string; href: string }[] = [
   {
-    title: "Blog",
-    href: "/blogs",
+    title: "Mail me",
+    href: "mailto:marcochristian114@gmail.com",
   },
   {
-    title: "Newsletter",
-    href: "/news",
+    title: "...",
+    href: "#contact",
   },
 ];
 
