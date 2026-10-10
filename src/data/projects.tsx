@@ -207,7 +207,7 @@ const projects: Project[] = [
   {
     id: "kanvu",
     category: "Task management - Kanban tool",
-    title: "Kanvu",
+    title: "Kanvu - Customizable Task Management Tool",
     src: "/assets/projects-screenshots/kanvu/landing.png",
     screenshots: ["landing.png"],
     skills: {
@@ -251,6 +251,54 @@ const projects: Project[] = [
       );
     },
   },
+  {
+    id: "pesonakp",
+    category: "Tourism Website · Mobile App · Government Project",
+    title: "(WIP) Pesona Kulon Progo | Official Tourism Website",
+    src: "/assets/projects-screenshots/pesonakp/landing.jpeg",
+    screenshots: ["landing.png"],
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.html,
+        PROJECT_SKILLS.css,
+        PROJECT_SKILLS.js,
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.next,
+      ],
+      backend: [
+        PROJECT_SKILLS.nestjs,
+        PROJECT_SKILLS.postgres,
+        PROJECT_SKILLS.typeorm,
+        PROJECT_SKILLS.jwt,
+      ],
+    },
+    live: "#",
+    // github: "https://github.com/marcoyap41/kanvu",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            An official tourism website showcasing the destinations, attractions, 
+            and cultural appeal of Kulon Progo, developed for the Kulon Progo Regency Government’s Tourism Office.
+          </TypographyP>
+          <TypographyP className="font-mono ">
+            Designed around 8 major retribution-based tourist attractions, with a public-facing interface for exploring destination information and an administrative panel 
+            for tourism office staff to manage content. The platform encompasses destination photography, interactive maps and location information, ticket prices, monthly visitor statistics,
+            crowd-level indicators, domestic and international visitor data, and accommodation information.
+
+            (Working In Progress)
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <SlideShow
+            images={[
+              `${BASE_PATH}/pesonakp/landing.jpeg`,
+            ]}
+          />
+        </div>
+      );
+    },
+  },
+  
   // {
   //   id: "codingducks",
   //   category: "Real-time coding platform",
