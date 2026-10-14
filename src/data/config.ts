@@ -5,7 +5,7 @@ const config = {
     short:
       "Explore the portfolio of Marco Christian, a software engineer, full-stack developer, and AI enthusiast!",
   },
-  aboutPhoto: "/assets/about/me.jpg",
+  aboutPhoto: "/assets/about/me2.jpeg",
   about: [
   "Hi, I'm Marco Christian, a Computer Science student at UGM and a software engineer who enjoys building interactive, polished web experiences.",
   "I like turning ideas into practical solutions, and I'm increasingly interested in building products at the intersection of Software Engineering and AI.",
