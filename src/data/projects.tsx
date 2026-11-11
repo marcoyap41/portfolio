@@ -81,6 +81,9 @@ const brand = (title: string, file: string): Skill => ({
   icon: <MaskIcon src={`/assets/logos/${file}`} title={title} />,
 });
 const PROJECT_SKILLS = {
+  openai: brand("OpenAI SDK", "openai.svg"),
+  flask: brand("Flask", "flask-mono.svg"),
+  vite: brand("Vite", "vite-mono.svg"),
   html: brand("HTML", "html5-mono.svg"),
   css: brand("CSS", "css3-mono.svg"),
   nestjs: brand("NestJS", "nestjs-mono.svg"),
@@ -206,7 +209,7 @@ export type Project = {
 const projects: Project[] = [
   {
     id: "kanvu",
-    category: "Task management - Kanban tool",
+    category: "Productivity App · Kanban Tool",
     title: "Kanvu - Customizable Task Management Tool",
     src: "/assets/projects-screenshots/kanvu/landing.png",
     screenshots: ["landing.png"],
@@ -299,113 +302,93 @@ const projects: Project[] = [
     },
   },
   
-  // {
-  //   id: "codingducks",
-  //   category: "Real-time coding platform",
-  //   title: "Coding Ducks",
-  //   src: "/assets/projects-screenshots/codingducks/landing.png",
-  //   screenshots: ["landing.png"],
-  //   skills: {
-  //     frontend: [
-  //       PROJECT_SKILLS.ts,
-  //       PROJECT_SKILLS.next,
-  //       PROJECT_SKILLS.react,
-  //       PROJECT_SKILLS.tailwind,
-  //       PROJECT_SKILLS.codemirror,
-  //       PROJECT_SKILLS.reactFlow,
-  //     ],
-  //     backend: [
-  //       PROJECT_SKILLS.node,
-  //       PROJECT_SKILLS.trpc,
-  //       PROJECT_SKILLS.drizzle,
-  //       PROJECT_SKILLS.postgres,
-  //       PROJECT_SKILLS.yjs,
-  //       PROJECT_SKILLS.hocuspocus,
-  //       PROJECT_SKILLS.betterAuth,
-  //       PROJECT_SKILLS.docker,
-  //     ],
-  //   },
-  //   live: "https://www.codingducks.xyz/",
-  //   github: "https://github.com/Naresh-Khatri/Coding-Ducks",
-  //   get content() {
-  //     return (
-  //       <div>
-  //         <TypographyP className="font-mono text-2xl text-center">
-  //           A multi-language judge, a CRDT collaborative editor, and a
-  //           system-design simulation game — in one platform.
-  //         </TypographyP>
-  //         <TypographyP className="font-mono ">
-  //           Coding Ducks is a full-stack, real-time coding platform built as a
-  //           production-grade Turborepo monorepo (2 apps, 7 shared packages) in
-  //           strict TypeScript — Next.js 16 / React 19, a tRPC v11 type-safe API,
-  //           PostgreSQL + Drizzle ORM (18 tables), and a standalone real-time
-  //           Node service, with enforced one-way apps → packages dependency
-  //           boundaries.
-  //         </TypographyP>
-  //         <ProjectsLinks live={this.live} repo={this.github} />
+  {
+    id: "byovlmocr",
+    category: "AI App · OCR Tool",
+    title: "Bring-Your-Own-VLM OCR",
+    src: "/assets/projects-screenshots/byovlmocr/landing.png",
+    screenshots: ["landing.png"],
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.js,
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.vite,
+      ],
+      backend: [
+        PROJECT_SKILLS.python,
+        PROJECT_SKILLS.flask,
+        PROJECT_SKILLS.openai,
+        PROJECT_SKILLS.docker,
+      ],
+    },
+    live: "https://byovlm-ocr.up.railway.app/",
+    github: "https://github.com/marcoyap41/bring-your-own-vlm-ocr",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            A provider-agnostic Vision OCR web app with real-time NDJSON streaming, interactive 2D bounding boxes, and client-side BYOK for any OpenAI-compatible Vision-Language Model.
+          </TypographyP>
+          <TypographyP className="font-mono ">
+            An end-to-end VLM-based OCR tool engineered to plug into any Vision-Language Model, turning raw model inference into real-time streaming text and interactive bounding boxes. Powered by a high-performance Python (Flask/uv) backend 
+            and a reactive React/Vite frontend, the system orchestrates any OpenAI-compatible Vision-Language 
+            Model (OpenRouter, Groq, OpenAI, Together AI, or local Ollama / vLLM runtimes) with zero-trust 
+            client-side BYOK key management, streaming token delivery, and deterministic coordinate snapping.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <SlideShow
+            images={[
+              `${BASE_PATH}/byovlmocr/landing.png`,
+            ]}
+          />
+          <TypographyH3 className="my-4 mt-8">
+            Decoupled VLM Orchestration &amp; NDJSON Streaming Pipeline
+          </TypographyH3>
+          <p className="font-mono mb-2">
+            Abstracted multi-provider routing behind a unified OpenAI-compatible protocol with runtime 
+            provider hot-switching (OpenRouter, Groq, Ollama, LM Studio). Extraction runs in dual modes: 
+            full-page OCR utilizing raw HTTP NDJSON (<code className="text-xs bg-muted px-1 py-0.5 rounded">application/x-ndjson</code>) 
+            chunk streaming for immediate time-to-first-token markdown delivery, and structured line-level text spotting. 
+            All API credentials remain client-isolated in <code className="text-xs bg-muted px-1 py-0.5 rounded">localStorage</code>, 
+            relaying directly through ephemeral request headers without persistence on the host.
+          </p>
 
-  //         <TypographyH3 className="my-4 mt-8">
-  //           Ducklets — real-time collaborative editor
-  //         </TypographyH3>
-  //         <p className="font-mono mb-2">
-  //           A multiplayer code editor built on Y.js CRDTs and a standalone
-  //           Hocuspocus WebSocket server — concurrent editing, live cursor
-  //           presence, and conflict-free merging persisted to Postgres as
-  //           versioned binary state. Secured by a custom HMAC-SHA256 signed-token
-  //           scheme (constant-time verification, 1-hour TTL) with owner / editor
-  //           / viewer RBAC re-verified live against the DB so permission
-  //           revocation takes effect mid-session. Includes room forking,
-  //           point-in-time snapshots, idempotent chat, and throttled live
-  //           previews (Puppeteer + Cloudflare R2, coalesced to ≤1 render/60s).
-  //         </p>
-  //         <SlideShow
-  //           images={[
-  //             `${BASE_PATH}/codingducks/ducklets-editor.png`,
-  //             `${BASE_PATH}/codingducks/ducklets.png`,
-  //           ]}
-  //         />
+          <TypographyH3 className="my-4 mt-8">
+            Computer Vision Edge-Energy Refinement &amp; Parallel Margin Tiling
+          </TypographyH3>
+          <p className="font-mono mb-2">
+            Compensates for standard VLM coordinate fuzziness by applying automated computer vision post-processing: 
+            horizontal projection profile scanning and Sobel/Canny edge-energy filters tightly snap raw model bounding 
+            boxes onto pixel-exact text baseline contours. To mitigate context truncation and hallucinations on high-resolution, 
+            multi-column documents, an adaptive strip-slicing algorithm splits oversized pages along detected blank whitespace 
+            margins and dispatches slices concurrently across a Python <code className="text-xs bg-muted px-1 py-0.5 rounded">ThreadPoolExecutor</code>.
+          </p>
 
-  //         <TypographyH3 className="my-4 mt-8">
-  //           CD Judge — in-house code execution engine
-  //         </TypographyH3>
-  //         <p className="font-mono mb-2">
-  //           A free, self-hostable, Judge0-class execution engine supporting 10
-  //           languages (Python, JS, TS, Java, C, C++, Rust, Go, Ruby, PHP) with per-language
-  //           driver/harness generation that injects test cases, parses typed
-  //           arguments, and redacts hidden-test output. An asynchronous submit →
-  //           poll → verdict pipeline uses an optimistic-locking finalizer
-  //           (UPDATE … WHERE status=&apos;running&apos;) to guarantee exactly-once
-  //           streak/scoring under concurrent polling, plus &quot;beats X%&quot;
-  //           runtime-percentile ranking via SQL window aggregates.
-  //         </p>
-  //         <SlideShow
-  //           images={[
-  //             `${BASE_PATH}/codingducks/problems.png`,
-  //             `${BASE_PATH}/codingducks/problem.png`,
-  //             `${BASE_PATH}/codingducks/machine-coding.png`,
-  //           ]}
-  //         />
+          {/* <TypographyH3 className="my-4 mt-8">
+            Multi-Format Coordinate Normalization &amp; Canvas Spotting
+          </TypographyH3>
+          <p className="font-mono mb-2">
+            Unified coordinate translation pipeline that reconciles conflicting model schema specifications on the fly — 
+            normalizing Gemma/PaliGemma&apos;s <code className="text-xs bg-muted px-1 py-0.5 rounded">[ymin, xmin, ymax, xmax]</code> 
+            (0–1000 scale) and generic/OpenAI <code className="text-xs bg-muted px-1 py-0.5 rounded">[xmin, ymin, xmax, ymax]</code> 
+            into uniform fractional coordinates. Rendered on an interactive HTML5/SVG canvas overlay featuring synchronized 
+            bidirectional hover highlighting between visual bounding boxes and extracted text blocks.
+          </p> */}
 
-  //         <TypographyH3 className="my-4 mt-8">
-  //           System Design — simulation game
-  //         </TypographyH3>
-  //         <p className="font-mono mb-2">
-  //           An interactive puzzle game where users assemble architectures from
-  //           16 typed building blocks on a React Flow canvas, then run them
-  //           through a pure-TypeScript, client-side traffic-simulation engine —
-  //           topological propagation, capacity/latency modeling, cache-warmth
-  //           EMA, SPOF detection, and DDoS &amp; chaos-fault injection. A 3-star
-  //           scoring model across reliability / performance / efficiency spans 10
-  //           progressively harder levels, guarded by a calibration suite
-  //           (node&nbsp;--test) that runs reference designs 15× through the real
-  //           engine to assert each level stays beatable-but-hard (optimal ⇒ 3★,
-  //           naive ⇒ ≤2★, broken ⇒ fail).
-  //         </p>
-  //         <SlideShow images={[`${BASE_PATH}/codingducks/sysdesign.png`]} />
-  //       </div>
-  //     );
-  //   },
-  // },
+          <TypographyH3 className="my-4 mt-8">
+            Production Guardrails, Cost Telemetry &amp; Containerization
+          </TypographyH3>
+          <p className="font-mono mb-2">
+            Engineered for resilient cloud deployment (Docker + Railway) with a dual runtime architecture: 
+            unrestricted local developer mode and an isolated public showcase mode. The showcase mode enforces 
+            IP-fingerprinted SQLite token-bucket rate limiting (thread-locked transactions), automatic image 
+            downscaling, and per-request telemetry reporting prompt/completion token consumption, processing latency, 
+            estimated API cost, and upstream credit balances.
+          </p>
+        </div>
+      );
+    },
+  },
   // {
   //   id: "gumbalup",
   //   category: "Real-time quiz platform",
