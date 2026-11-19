@@ -389,87 +389,101 @@ const projects: Project[] = [
       );
     },
   },
-  // {
-  //   id: "gumbalup",
-  //   category: "Real-time quiz platform",
-  //   title: "Gumbalup",
-  //   src: "/assets/projects-screenshots/gumbalup/landing.png",
-  //   screenshots: ["landing.png"],
-  //   skills: {
-  //     frontend: [
-  //       PROJECT_SKILLS.ts,
-  //       PROJECT_SKILLS.next,
-  //       PROJECT_SKILLS.react,
-  //       PROJECT_SKILLS.tailwind,
-  //       PROJECT_SKILLS.motion,
-  //     ],
-  //     backend: [
-  //       PROJECT_SKILLS.trpc,
-  //       PROJECT_SKILLS.partykit,
-  //       PROJECT_SKILLS.drizzle,
-  //       PROJECT_SKILLS.postgres,
-  //       PROJECT_SKILLS.betterAuth,
-  //       PROJECT_SKILLS.cloudflare,
-  //       PROJECT_SKILLS.docker,
-  //     ],
-  //   },
-  //   live: "https://gumbalup.com/",
-  //   // Private repo (commercial product) — intentionally no public source link
-  //   get content() {
-  //     return (
-  //       <div>
-  //         <TypographyP className="font-mono text-2xl text-center">
-  //           A live, interactive quiz &amp; audience-engagement platform — built
-  //           solo, end-to-end.
-  //         </TypographyP>
-  //         <TypographyP className="font-mono ">
-  //           A production-grade, multi-tenant SaaS where organizations build
-  //           quizzes (manually or with AI) and run live, host-driven games —
-  //           players join from any device via room code / QR and compete on a
-  //           real-time, server-authoritative leaderboard. Also supports async
-  //           self-paced quizzes, team mode, anti-cheat monitoring, analytics,
-  //           billing, and white-labeling. ~43.5K lines of TypeScript across 257
-  //           files.
-  //         </TypographyP>
-  //         <ProjectsLinks live={this.live} repo={this.github} />
+  {
+    id: "kanso",
+    category: "Workspace App · Personal Life System · Task Management",
+    title: "kanso - minimalist task micromanagement",
+    src: "/assets/projects-screenshots/kanso/landing.png",
+    screenshots: ["landing.png"],
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.ts,
+        PROJECT_SKILLS.next,
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.tailwind,
+      ],
+      backend: [
+        PROJECT_SKILLS.express,
+        PROJECT_SKILLS.postgres,
+        PROJECT_SKILLS.jwt,
+        PROJECT_SKILLS.vercel,
+      ],
+    },
+    live: "https://kanso.web.id",
+    // Private repo (commercial product) — intentionally no public source link
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            A minimalist personal life system &amp; microtask execution
+            workspace — built solo, end-to-end.
+          </TypographyP>
+          <TypographyP className="font-mono ">
+            <strong>kanso</strong> organizes your whole life into one structured
+            system — then moves it forward by turning the big picture into
+            small, focused steps. Inspired by the Japanese aesthetic principle{' '}
+            <em>kansō</em> (simplicity through eliminating clutter), it bridges
+            the gap between high-level life goals and the next 25 minutes of
+            actual execution. Rather than scattering priorities across
+            disconnected checklists, calendars, and timers, kanso unifies
+            everything inside one cohesive spatial workspace (Task Management ← Home
+            → Calendar) so every completed microtask and
+            focused minute visibly moves your whole system forward. Backed by Next.js 15,
+            Express.js, and PostgreSQL.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
 
-  //         <TypographyH3 className="my-4 mt-8">
-  //           Server-authoritative game engine
-  //         </TypographyH3>
-  //         <p className="font-mono mb-2">
-  //           A real-time game engine on PartyKit (Cloudflare Durable Objects +
-  //           WebSockets): a per-room in-memory state machine with an authoritative
-  //           1-second timer, speed-rank + streak scoring, deterministic
-  //           tie-broken leaderboards, team mode, and graceful reconnect/replay —
-  //           ~2,800 lines of game logic behind a typed message protocol (42
-  //           discriminated-union variants). Correctness is never sent to clients
-  //           during an active question, so players can&apos;t sniff answers or
-  //           game the clock.
-  //         </p>
-  //         <SlideShow images={[`${BASE_PATH}/gumbalup/dashboard.png`]} />
+          <TypographyH3 className="my-4 mt-8">
+            Big Picture → Small Steps: Spatial Focus Hub &amp;
+            Picture-in-Picture Timer
+          </TypographyH3>
+          <p className="font-mono mb-2">
+            Open to a minimalistic radial Home horizon where up to 5 color-coded Task
+            Boards orbit center stage as the core pillars of your life system.
+            From the big picture, zoom down{' '}
+            <code className="text-xs bg-muted px-1 py-0.5 rounded">
+              Projects → Tasks → Subtasks
+            </code>{' '}
+            through a 3D selection reel straight into distraction-free Working
+            Mode to execute one microtask at a time. A persistent Pomodoro (
+            <code className="text-xs bg-muted px-1 py-0.5 rounded">25:5</code>,{' '}
+            <code className="text-xs bg-muted px-1 py-0.5 rounded">50:10</code>,
+            or custom with zen chimes) and stopwatch timer stays synced across
+            every view, rolls tracked focus time directly back to that exact
+            task or subtask, and pops out into an always-on-top floating mini-HUD
+            via the{' '}
+            <code className="text-xs bg-muted px-1 py-0.5 rounded">
+              Document Picture-in-Picture API
+            </code>{' '}.
+          </p>
+          <SlideShow images={[
+            `${BASE_PATH}/kanso/home.png`,
+            `${BASE_PATH}/kanso/taskboard.png`,
+            `${BASE_PATH}/kanso/timer.png`
+          ]} />
 
-  //         <TypographyH3 className="my-4 mt-8">
-  //           Edge-to-DB security boundary &amp; AI authoring
-  //         </TypographyH3>
-  //         <p className="font-mono mb-2">
-  //           The edge worker never connects to Postgres directly — it proxies all
-  //           persistence through a shared-secret internal HTTPS API on Next.js,
-  //           keeping the database unreachable from the public internet while the
-  //           worker stays stateless and edge-deployed. A fully type-safe layer (17
-  //           tRPC routers, 5 authorization tiers, Zod) backs it, with LLM-powered
-  //           quiz authoring (Groq / Llama) from topics or uploaded PDFs, quota-
-  //           metered per org, plus analytics with CSV/Excel/PDF export.
-  //         </p>
-  //         <SlideShow
-  //           images={[
-  //             `${BASE_PATH}/gumbalup/editor.png`,
-  //             `${BASE_PATH}/gumbalup/library.png`,
-  //           ]}
-  //         />
-  //       </div>
-  //     );
-  //   },
-  // },
+          <TypographyH3 className="my-4 mt-8">
+            4-Tier System Architecture, Live Drag Projections &amp;
+            Plan-vs-Actual Calendar
+          </TypographyH3>
+          <p className="font-mono mb-2">
+            Structure every tier in Task Management with persistent drag-and-drop
+            reordering at ease. Put those small steps on
+            the clock across Month, Week, and Day calendar views by scheduling
+            both tasks and individual subtasks onto day-timeboxes or
+            all-day strips — featuring logged focus sessions overlaid beside planned blocks for honest
+            plan-vs-actual reflection.
+          </p>
+          <SlideShow
+            images={[
+              `${BASE_PATH}/kanso/manager.png`,
+              `${BASE_PATH}/kanso/calendar.png`,
+            ]}
+          />
+        </div>
+      );
+    },
+  },
   // {
   //   id: "waku",
   //   category: "Image rendering platform",
